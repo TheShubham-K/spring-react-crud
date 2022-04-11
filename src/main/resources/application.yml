@@ -1,0 +1,15 @@
+spring:
+  env: .okta.env
+  profiles:
+    active: spring.profiles.active
+  security:
+    oauth2:
+      client:
+        registration:
+          okta:
+            client-id: ${okta.client-id}
+            client-secret: ${okta.client-secret}
+            scope: openid, email, profile
+        provider:
+          okta:
+            issuer-uri: https://dev-66685799.okta.com/oauth2/default
